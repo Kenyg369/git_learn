@@ -1,5 +1,3 @@
-# branch, this is branch creation 
-
 class BinaryPerceptron(object):
 
     def __init__(self, examples, iterations):
@@ -39,8 +37,19 @@ class BinaryPerceptron(object):
             # score_true = score_true + self.omegas[True][d-1] * value
             # score_false = score_false + self.omegas[False][d-1] * value
         if product > 0:
-            return False
-        else:
             return True
+        else:
+            return False
 
+
+    def omega_plus_x(self, example):
+        x = example[0]
+        y = example[1]
+        for key, value in x.items():
+            d = int(key[1:])
+            if y is True:
+                self.omega[d-1] = self.omega[d-1] + value
+            else:
+                self.omega[d-1] = self.omega[d-1] - value
+        # print("new omega: ", self.omega)
 
