@@ -1,5 +1,3 @@
-# branch,this is branch creation 
-
 class BinaryPerceptron(object):
 
     def __init__(self, examples, iterations):
@@ -54,3 +52,4 @@ class BinaryPerceptron(object):
             else:
                 self.omega[d-1] = self.omega[d-1] - value
         # print("new omega: ", self.omega)
+
